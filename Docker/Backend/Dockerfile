@@ -8,7 +8,7 @@ RUN mkdir /build
 # 1. Skopirovat zdrojove kody aplikacie do adresara /build, ktory sa vytvoril v predchadzajucom kroku
 COPY . /build
 # 2. Nastavit adresar /build ako pracovny adresar (work directory)
-WORKDIR . /build
+WORKDIR /build
 #
 RUN CGO_ENABLED=0 GOOS=linux go build -a -o main .
 
