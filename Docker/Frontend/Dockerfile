@@ -19,6 +19,8 @@ RUN rm /etc/nginx/conf.d/default.conf
 COPY conf.d/default.conf /etc/nginx/conf.d
 ## TODO: Vasou ulohou je:
 # 1. pridat instrukciu, ktora bude informovat o tom, ze kontajner publikuje TCP port 8080
+EXPOSE 8080
 # 2. pridat instrukciu, ktora zabezpeci, ze po vytvoreni kontajnera sa spusti nginx:
 #   nginx -g daemon off;
 #   TIP: pozor ako zadavate parametre do instrukcie
+CMD ["nginx", "-g", "daemon off;"]
