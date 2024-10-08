@@ -1,7 +1,7 @@
 # Multi-stage build docker file
 
 # app build stage
-FROM golang:alpine as builder
+FROM golang:alpine AS builder
 RUN mkdir /build
 ## TODO: 
 # Vasou ulohou je:
@@ -9,7 +9,6 @@ RUN mkdir /build
 COPY . /build
 # 2. Nastavit adresar /build ako pracovny adresar (work directory)
 WORKDIR /build
-#
 RUN CGO_ENABLED=0 GOOS=linux go build -a -o main .
 
 # image build image - use scratch to get smallest possible size of an image
