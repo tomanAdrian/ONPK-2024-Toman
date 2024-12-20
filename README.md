@@ -1,11 +1,7 @@
 # ONPK-2024-Toman
 
-Semestralna praca
-
-BUILD DOCKEROV
-docker build -t appfrontend:1.0.0 .
-docker build -t appbackend:1.0.0 .
-
-SPUSTENIE DOCKEROV
-docker run --rm -it -p8080:8080 appfrontend:1.0.0
-docker run --rm -it appbackend:1.0.0
+# Postup
+- Docker: Vybuduj obrazy v priečinku Docker a nahraj ich na Docker Hub.
+- Helm: Nasadi aplikáciu pomocou Helm chartov v priečinku Helm.
+- CI/CD: Nastav Tekton pipelines na automatizáciu build a deploy.
+- Terraform: Spusti Terraform skripty v priečinku Terraform pre vytvorenie Azure infraštruktúry.

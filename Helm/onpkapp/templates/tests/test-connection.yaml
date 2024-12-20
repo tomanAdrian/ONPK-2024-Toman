@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "onpkapp.fullname" . }}-test-connection"
+  labels:
+    {{- include "onpkapp.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "onpkapp.fullname" . }}:{{ .Values.frontend.service.port }}']
+  restartPolicy: Never
