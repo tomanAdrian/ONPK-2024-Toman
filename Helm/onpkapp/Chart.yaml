@@ -1,0 +1,15 @@
+apiVersion: v2
+name: onpkapp-chart
+description: A Helm chart for k8s ONPK application with Frontend, Backend and MongoDB
+
+type: application
+
+version: 0.1.0
+
+appVersion: "latest"
+
+dependencies:
+  - name: mongodb
+    version: "~16.0"
+    repository: "https://charts.bitnami.com/bitnami"
+
