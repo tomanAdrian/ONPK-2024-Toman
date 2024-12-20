@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fe-onpkapp
+  namespace: onpkapp
+  labels:
+    app: fe-onpkapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fe-onpkapp
+  template:
+    metadata:
+      labels:
+        app: fe-onpkapp
+    spec:
+      containers:
+        - name: fe-onpkapp-container
+          image: tomanAdrian/appfrontend:1.0.0
+          imagePullPolicy: IfNotPresent
+          ports:
+          - containerPort: 8080
+          env:
+          - name: REACT_APP_APIHOSTPORT
+            value: http://onpkapp.mydomain.local/platforms
