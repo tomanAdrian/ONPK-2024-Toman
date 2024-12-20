@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: fe-onpkapp-container
-          image: peter510/appfrontend:1.0.0
+          image: tomanAdrian/appfrontend:1.0.0
           imagePullPolicy: IfNotPresent
           ports:
           - containerPort: 8080

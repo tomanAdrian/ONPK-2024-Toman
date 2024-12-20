@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: be-onpkapp-container
-          image: peter510/appbackend:1.0.0
+          image: tomanAdrian/appbackend:1.0.0
           imagePullPolicy: IfNotPresent
           ports:
           - containerPort: 9080
